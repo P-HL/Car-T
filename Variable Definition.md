@@ -1,20 +1,20 @@
 # 变量定义文档
 ## 一、静态变量
-Age
-Sex
-Disease
-BM disease burden
-Bone marrow cellularity
-extramedullary mass
-extranodal involvement
-Ann Arbor stage
-Number of prior therapy lines
-Prior hematopoietic stem cell
-Bridging therapy
-CAR-T therapy following auto-HSCT
-Costimulatory molecule
-Type of construct(tandem/single target)
-CAR-T cell infusion date
+Age  
+Sex  
+Disease  
+BM disease burden  
+Bone marrow cellularity  
+extramedullary mass  
+extranodal involvement  
+Ann Arbor stage  
+Number of prior therapy lines  
+Prior hematopoietic stem cell  
+Bridging therapy  
+CAR-T therapy following auto-HSCT  
+Costimulatory molecule  
+Type of construct(tandem/single target)  
+CAR-T cell infusion date  
 
 
 # 二、动态变量
@@ -41,7 +41,8 @@ CBC020
 CBC021
 CBC022
 CBC023
-CBC024
+CBC024  
+
 Inflammatory Biomarker001
 Inflammatory Biomarker002
 Inflammatory Biomarker003
@@ -50,8 +51,10 @@ Inflammatory Biomarker005
 Inflammatory Biomarker006
 Inflammatory Biomarker007
 Inflammatory Biomarker008
-Inflammatory Biomarker009
-VCN001
+Inflammatory Biomarker009  
+
+VCN001  
+
 Lymphocyte Subsets001
 Lymphocyte Subsets002
 Lymphocyte Subsets003
@@ -62,7 +65,8 @@ Lymphocyte Subsets007
 Lymphocyte Subsets008
 Lymphocyte Subsets009
 Lymphocyte Subsets010
-Lymphocyte Subsets011
+Lymphocyte Subsets011  
+
 Coagulation001
 Coagulation002
 Coagulation003
@@ -70,7 +74,8 @@ Coagulation004
 Coagulation005
 Coagulation006
 Coagulation007
-Coagulation008
+Coagulation008  
+
 Electrolytes001
 Electrolytes002
 Electrolytes003
@@ -104,12 +109,13 @@ Biochemistry024
 Biochemistry025
 Biochemistry026
 Biochemistry027
-Biochemistry028
+Biochemistry028  
+
 Vital Signs001
 Vital Signs002
 Vital Signs003
 Vital Signs004
-Vital Signs005
+Vital Signs005  
 
 
 
