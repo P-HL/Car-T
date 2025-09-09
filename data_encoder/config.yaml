@@ -1,0 +1,85 @@
+
+
+# CAR-T 数据处理系统配置文件
+
+# =============================================================
+
+# 静态数据配置部分
+# =============================================================
+
+# 静态数据路径配置
+# ----------------------
+static_input_file: /home/phl/PHL/Car-T/datasetcart/encoded.csv
+static_output_file: /home/phl/PHL/Car-T/data_encoder/output/dataset/encoded_standardized.csv
+
+# 静态数据验证配置
+# ----------------------
+static_expected_column_count: 22
+static_expected_patient_count: 500
+static_validation_report_path: /home/phl/PHL/Car-T/data_encoder/output/static_data_validation_report.txt
+
+# 静态数据步骤控制配置
+# ----------------------
+static_validation_only: true   # 静态数据默认仅进行验证
+static_processing_only: false
+
+
+
+
+# =============================================================
+# 动态数据配置部分
+# =============================================================
+
+# 动态数据路径配置
+# ----------------------
+input_dir: /home/phl/PHL/Car-T/datasetcart/processed
+output_dir: /home/phl/PHL/Car-T/data_encoder/output/dataset/processed_standardized
+
+# 动态数据验证配置
+# ----------------------
+dynamic_expected_file_count: 500
+dynamic_expected_row_count: 47
+dynamic_expected_time_range_start: -15
+dynamic_expected_time_range_end: 30
+
+# 动态数据处理配置
+# ----------------------
+# 列删除配置
+enable_column_deletion: false
+cbc_columns_to_delete:
+  - 2
+  - 4
+  - 6
+  - 8
+  - 10
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 21
+  - 22
+  - 23
+  - 24
+biochemistry_columns_to_delete:
+  - 3
+  - 7
+coagulation_columns_to_delete:
+  - 8
+
+# 动态数据处理控制配置
+# ----------------------
+remove_optional_columns: false
+verbose: true
+progress_interval: 50
+
+# 动态数据步骤控制配置
+# ----------------------
+dynamic_validation_only: true
+dynamic_processing_only: false
+skip_interactive: false
+
+# 动态数据报告输出配置
+# ----------------------
+dynamic_validation_report_path: /home/phl/PHL/Car-T/data_encoder/output/dynamic_data_validation_report.txt
+dynamic_processing_report_path: /home/phl/PHL/Car-T/data_encoder/output/dynamic_data_processing_report.txt
