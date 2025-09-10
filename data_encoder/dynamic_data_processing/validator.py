@@ -114,26 +114,30 @@ class DynamicDataValidator:
             # 验证行数（时间点数）
             expected_time_start = self.config.get('dynamic_expected_time_range_start')
             expected_time_end = self.config.get('dynamic_expected_time_range_end')
-            # 修复：包含第0天的计算，时间范围应该包括起始点、结束点和第0天
+            # 计算预期的数据行数（不含表头）
+            expected_data_rows = expected_time_end - expected_time_start + 1
             expected_days = list(range(expected_time_start, expected_time_end + 1))
             
             # 验证配置一致性：检查dynamic_expected_row_count是否与时间范围计算一致
-            calculated_row_count = expected_time_end - expected_time_start + 1  # +1 for header
+            # dynamic_expected_row_count应该包含表头，即数据行数+1
+            calculated_total_rows = expected_data_rows + 1  # +1 for header
             config_row_count = self.config.get('dynamic_expected_row_count')
-            if calculated_row_count != config_row_count:
-                warning_msg = f"配置不一致: 根据时间范围计算的行数为 {calculated_row_count}，但配置中dynamic_expected_row_count为 {config_row_count}"
+            if calculated_total_rows != config_row_count:
+                warning_msg = f"配置不一致: 根据时间范围计算的总行数为 {calculated_total_rows}（含表头），但配置中dynamic_expected_row_count为 {config_row_count}"
                 result['warnings'].append(warning_msg)
             
             # 验证实际数据行数（不含表头）是否与预期时间点数匹配
-            if len(df) != len(expected_days):
-                warning_msg = f"时间点数量异常: 预期 {len(expected_days)} 个时间点，实际发现 {len(df)} 个"
-                result['warnings'].append(warning_msg)
+            if len(df) != expected_data_rows:
+                error_msg = f"数据行数异常: 预期 {expected_data_rows} 行数据（时间范围 {expected_time_start} 到 {expected_time_end}），实际发现 {len(df)} 行"
+                result['errors'].append(error_msg)
+                result['is_valid'] = False
                 
             # 验证实际总行数（含表头）是否与配置的dynamic_expected_row_count匹配
             actual_total_rows = len(df) + 1  # +1 for header
             if actual_total_rows != config_row_count:
-                warning_msg = f"总行数异常: 预期 {config_row_count} 行（含表头），实际发现 {actual_total_rows} 行"
-                result['warnings'].append(warning_msg)
+                error_msg = f"总行数异常: 预期 {config_row_count} 行（含表头），实际发现 {actual_total_rows} 行"
+                result['errors'].append(error_msg)
+                result['is_valid'] = False
             
             # 验证列名
             actual_columns = df.columns.tolist()

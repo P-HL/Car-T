@@ -32,8 +32,8 @@ class StaticDataValidator:
         self.static_input_file = config.get('static_input_file')
         
         # 静态数据验证配置
-        self.expected_column_count = config.get('static_expected_column_count', 22)
-        self.expected_patient_count = config.get('static_expected_patient_count', 500)
+        self.expected_column_count = config.get('static_expected_column_count', 23)  # 更新为23列
+        self.expected_patient_count = config.get('static_expected_patient_count', 700)
         
         # 定义预期的列结构和验证规则
         self.column_specs = self._define_column_specifications()
@@ -53,7 +53,7 @@ class StaticDataValidator:
             0: {  # 患者ID
                 'name': '患者ID',
                 'type': 'integer',
-                'range': (1, 500),
+                'range': (1, 700),
                 'continuous': True,
                 'required': True
             },
@@ -99,7 +99,7 @@ class StaticDataValidator:
             7: {  # 结外有无病变
                 'name': 'extranodal involvement',
                 'type': 'categorical',
-                'categories': ['0', '1', '2', '3', '4', '5', '6'],
+                'categories': ['0', '1', '2', '3', '4', '5', '6', '7'],
                 'ordered': True,
                 'note': '将编码为3类：0/1/2',
                 'related_to': 'lymphoma'
@@ -113,7 +113,7 @@ class StaticDataValidator:
             9: {  # Ann Arbor分期
                 'name': 'Ann Arbor stage',
                 'type': 'categorical',
-                'categories': ['NA', 'I期', 'II期', 'III期', 'IV期'],
+                'categories': ['NA', 'I', 'II', 'III', 'IV'],
                 'ordered': True,
                 'related_to': 'lymphoma'
             },
@@ -129,65 +129,72 @@ class StaticDataValidator:
                 'type': 'categorical',
                 'categories': ['无', '自体', '异体']
             },
-            12: {  # 桥接治疗
+            12: {  # 既往CAR-T治疗
+                'name': 'Prior CAR-T therapy',
+                'type': 'categorical',
+                'categories': ['有', '无'],
+                'required': False,
+                'note': '既往有无CAR-T治疗史，将编码为Yes/No'
+            },
+            13: {  # 桥接治疗
                 'name': 'Bridging therapy',
                 'type': 'categorical',
                 'categories': ['有', '无']
             },
-            13: {  # 自体移植序贯CAR-T
-                'name': 'therapy following auto-HSCT',
+            14: {  # 自体移植序贯CAR-T
+                'name': 'CAR-T therapy following auto-HSCT',
                 'type': 'categorical',
                 'categories': ['是', '否']
             },
-            14: {  # CAR-T共刺激分子
+            15: {  # CAR-T共刺激分子
                 'name': 'Costimulatory molecule',
                 'type': 'categorical',
                 'categories': ['41BB', 'CD28', '41BB+CD28']
             },
-            15: {  # CAR-T结构类型
+            16: {  # CAR-T结构类型
                 'name': 'Type of construct(tandem/single target)',
                 'type': 'categorical',
                 'skip_validation': True,  # 由于存在差异，跳过验证
                 'note': '将编码为3类：Cocktail/Tandem/Single'
             },
-            16: {  # CAR-T回输日期
+            17: {  # CAR-T回输日期
                 'name': 'CAR-T cell infusion date',
                 'type': 'date',
                 'format': ['YYYY/MM/DD', 'YYYY-MM-DD'],
                 'note': '将标准化为YYYY-MM-DD'
             },
-            17: {  # CRS等级
+            18: {  # CRS等级
                 'name': 'CRS grade',
                 'type': 'categorical',
                 'categories': ['NA', '0', '1', '2', '3', '4', '5'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },
-            18: {  # ICANS等级
+            19: {  # ICANS等级
                 'name': 'ICANS grade',
                 'type': 'categorical',
                 'categories': ['NA', '0', '1', '2', '3', '4', '5'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },
-            19: {  # 早期ICAHT等级
+            20: {  # 早期ICAHT等级
                 'name': 'Early ICAHT grade',
                 'type': 'categorical',
                 'categories': ['NA', '0', '1', '2', '3', '4', '5'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },
-            20: {  # 晚期ICAHT等级
+            21: {  # 晚期ICAHT等级
                 'name': 'Late ICAHT grade',
                 'type': 'categorical',
                 'categories': ['NA', '0', '1', '2', '3', '4', '5'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },
-            21: {  # 感染等级
+            22: {  # 感染等级
                 'name': 'Infection grade',
                 'type': 'categorical',
-                'categories': ['NA', '0', '1', '2', '3', '4', '5'],
+                'categories': ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             }

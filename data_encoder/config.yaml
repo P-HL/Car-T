@@ -14,7 +14,7 @@ static_output_file: /home/phl/PHL/Car-T/data_encoder/output/dataset/encoded_stan
 
 # 静态数据验证配置
 # ----------------------
-static_expected_column_count: 22
+static_expected_column_count: 23
 static_expected_patient_count: 500
 static_validation_report_path: /home/phl/PHL/Car-T/data_encoder/output/static_data_validation_report.txt
 

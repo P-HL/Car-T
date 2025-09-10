@@ -182,6 +182,11 @@ class StaticDataProcessor:
         if 'CAR-T cell infusion date' in df_converted.columns:
             df_converted['CAR-T cell infusion date'] = df_converted['CAR-T cell infusion date'].apply(convert_date_format)
         
+        # 转换既往治疗历史相关信息
+        # 转换既往CAR-T治疗史 - 标准化既往CAR-T治疗经历记录
+        if 'Prior CAR-T therapy' in df_converted.columns:
+            df_converted['Prior CAR-T therapy'] = df_converted['Prior CAR-T therapy'].map(self.extramedullary_mapping)
+        
         # 第四步：保存转换结果并返回
         # 确保输出目录存在
         import os
