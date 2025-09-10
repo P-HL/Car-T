@@ -1,0 +1,6 @@
+ID,Age,Sex,Disease,BM disease burden,Bone marrow cellularity,extramedullary mass,extranodal involvement,B symptoms,Ann Arbor stage,Number of prior therapy lines,Prior hematopoietic stem cell transplantation,Bridging therapy,CAR-T therapy following auto-HSCT ,Costimulatory molecule,Type of construct(tandem/single target),CAR-T cell infusion date
+1,58,male,DLBCL,57,明显活跃,无,1,无,IV期,1,无,有,否,41BB+CD28,CD19+CD20 tandem,2024/5/20
+2,57,male,MCL,0,减低,无,2,无,I期,3,自体,无,否,41BB,CD7 single target,2024/5/20
+3,46,male,FL转DLBCL,72.82,极度活跃,有,5,有,II期,2,异体,有,是,41BB+CD28,single target cocktail,2024/6/2
+4,35,female,B-ALL,0,活跃,无,0,无,III期,8,异体,有,是,41BB+CD28,CD20/22,2024/6/24
+5,41,male,AITL,0.11,极度减低,有,6,有,NA,5,自体,无,否,41BB+CD28,CD19+CD22,2024/6/1

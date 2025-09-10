@@ -1,0 +1,37 @@
+biochemistry_columns_to_delete:
+- 3
+- 7
+cbc_columns_to_delete:
+- 2
+- 4
+- 6
+- 8
+- 10
+- 15
+- 16
+- 17
+- 18
+- 19
+- 21
+- 22
+- 23
+- 24
+coagulation_columns_to_delete:
+- 8
+enable_processing: true
+enable_validation: true
+expected_file_count: 500
+expected_row_count: 46
+expected_time_range_end: 30
+expected_time_range_start: -15
+input_dir: /home/phl/PHL/pytorch-forecasting/datasetcart/processed
+output_dir: /home/phl/PHL/pytorch-forecasting/datasetcart/processed_standardized
+processing_only: false
+processing_report_path: dynamic_data_processing_report.txt
+progress_interval: 50
+remove_optional_columns: false
+skip_interactive: false
+static_data_path: /home/phl/PHL/pytorch-forecasting/datasetcart/encoded_standardized.csv
+validation_only: false
+validation_report_path: dynamic_data_validation_report.txt
+verbose: true
