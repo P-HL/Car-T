@@ -6,9 +6,9 @@ import seaborn as sns
 import os
 
 # --- 配置路径 ---
-STATIC_DATA_PATH = '/home/phl/PHL/pytorch-forecasting/datasetcart/encoded.csv'
-DYNAMIC_DATA_FOLDER = '/home/phl/PHL/pytorch-forecasting/datasetcart/processed'
-OUTPUT_FOLDER = './output_gemini2' # 用于保存图表的输出文件夹
+STATIC_DATA_PATH = '/home/phl/PHL/Car-T/datasetcart/encoded.csv'
+DYNAMIC_DATA_FOLDER = '/home/phl/PHL/Car-T/datasetcart/processed'
+OUTPUT_FOLDER = './output' # 用于保存图表的输出文件夹
 
 # 确保输出文件夹存在
 if not os.path.exists(OUTPUT_FOLDER):

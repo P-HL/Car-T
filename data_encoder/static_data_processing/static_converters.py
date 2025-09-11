@@ -14,24 +14,32 @@ def convert_date_format(date_str):
     功能：将多种日期格式统一转换为ISO标准格式 (YYYY-MM-DD)
     
     参数:
-        date_str: 输入的日期字符串，支持格式如 "2024/5/20"
+        date_str: 输入的日期字符串，支持格式如 "2024/5/20" 或 "YYYY/MM/DD 0:00:00"
     
     返回:
-        标准化后的日期字符串 "2024-05-20" 或原值（如果转换失败）
+        标准化后的日期字符串 "YYYY-MM-DD" 格式，或原值（如果转换失败）
     
     处理逻辑:
         1. 检查空值和缺失值
-        2. 识别斜杠分隔的日期格式
-        3. 转换为标准ISO格式
+        2. 识别斜杠分隔的日期格式（包括带时间戳的格式）
+        3. 转换为标准ISO格式 YYYY-MM-DD
         4. 异常处理确保程序稳定性
     """
     if pd.isna(date_str) or date_str == '':
         return date_str
     
     try:
+        date_str = str(date_str).strip()
+        
         # 处理常见的 "年/月/日" 格式
-        if '/' in str(date_str):
-            date_obj = datetime.strptime(str(date_str), '%Y/%m/%d')
+        if '/' in date_str:
+            # 处理带时间戳的格式 "YYYY/MM/DD 0:00:00"
+            if ' ' in date_str:
+                date_part = date_str.split(' ')[0]  # 提取日期部分
+                date_obj = datetime.strptime(date_part, '%Y/%m/%d')
+            else:
+                # 处理简单的 "YYYY/MM/DD" 格式
+                date_obj = datetime.strptime(date_str, '%Y/%m/%d')
             return date_obj.strftime('%Y-%m-%d')  # 转换为ISO标准格式
         else:
             return date_str  # 如果已经是标准格式或其他格式，保持不变
@@ -140,3 +148,35 @@ def convert_therapy_line(value):
             return value
     except (ValueError, TypeError):
         return value  # 处理非数值输入
+
+
+def convert_grade_to_integer(value):
+    """
+    等级评分浮点数转整数函数
+    
+    功能：将浮点数等级值转换为整数值，用于CRS grade、ICANS grade等指标
+    
+    参数:
+        value: 等级值，可能为浮点数（如"0.0", "1.0"）或"NA"
+    
+    返回:
+        整数值（如"0", "1"）或"NA"
+    
+    处理逻辑:
+        - 将浮点数值转换为对应的整数字符串
+        - 保留"NA"值和NaN值不变
+        - 异常处理确保程序稳定性
+    """
+    if pd.isna(value) or value == 'NA' or value == '':
+        return value
+    
+    try:
+        # 转换为浮点数然后转为整数
+        float_val = float(value)
+        # 检查是否为 NaN
+        if pd.isna(float_val):
+            return value
+        int_val = int(float_val)
+        return str(int_val)
+    except (ValueError, TypeError):
+        return value  # 转换失败时返回原值

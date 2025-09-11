@@ -10,7 +10,8 @@ from .static_converters import (
     convert_disease, 
     convert_extranodal, 
     convert_therapy_line, 
-    convert_date_format
+    convert_date_format,
+    convert_grade_to_integer
 )
 
 
@@ -51,10 +52,10 @@ class StaticDataProcessor:
         
         # Ann Arbor分期映射 - 淋巴瘤分期标准化
         self.ann_mapping = {
-            'IV期': 'stage4',
-            'III期': 'stage3',
-            'II期': 'stage2',
-            'I期': 'stage1',
+            'IV': 'Stage4',
+            'III': 'Stage3',
+            'II': 'Stage2',
+            'I': 'Stage1',
             'NA': 'NA',
         }
         
@@ -85,7 +86,8 @@ class StaticDataProcessor:
             'single target cocktail': 'Cocktail',
             'CD20/22': 'Tandem',
             'CD19+CD22': 'Tandem'
-        }
+        }  
+    
     
     def convert_csv_data(self, input_file: str, output_file: str) -> pd.DataFrame:
         """
@@ -156,8 +158,8 @@ class StaticDataProcessor:
             df_converted['Number of prior therapy lines'] = df_converted['Number of prior therapy lines'].apply(convert_therapy_line)
 
         # 转换既往有无HSCT，既往有无造血干细胞移植历史
-        if 'Prior hematopoietic stem cell transplantation' in df_converted.columns:
-            df_converted['Prior hematopoietic stem cell transplantation'] = df_converted['Prior hematopoietic stem cell transplantation'].map(self.prior_mapping)
+        if 'Prior hematopoietic stem cell' in df_converted.columns:
+            df_converted['Prior hematopoietic stem cell'] = df_converted['Prior hematopoietic stem cell'].map(self.prior_mapping)
 
         # 转换CAR-T治疗相关信息
         # 转换桥接治疗 - CAR-T制备期间的临时治疗
@@ -165,8 +167,8 @@ class StaticDataProcessor:
             df_converted['Bridging therapy'] = df_converted['Bridging therapy'].map(self.extramedullary_mapping)
         
         # 转换自体移植序贯治疗信息
-        if 'CAR-T therapy following auto-HSCT ' in df_converted.columns:
-            df_converted['CAR-T therapy following auto-HSCT '] = df_converted['CAR-T therapy following auto-HSCT '].map(self.boolean_mapping)
+        if 'CAR-T therapy following auto-HSCT' in df_converted.columns:
+            df_converted['CAR-T therapy following auto-HSCT'] = df_converted['CAR-T therapy following auto-HSCT'].map(self.boolean_mapping)
         
         # 转换CAR-T细胞产品特征
         # 转换CAR-T共刺激分子类型 - 影响CAR-T细胞功能的关键因素
@@ -186,6 +188,13 @@ class StaticDataProcessor:
         # 转换既往CAR-T治疗史 - 标准化既往CAR-T治疗经历记录
         if 'Prior CAR-T therapy' in df_converted.columns:
             df_converted['Prior CAR-T therapy'] = df_converted['Prior CAR-T therapy'].map(self.extramedullary_mapping)
+        
+        # 转换等级评分相关指标 - 将浮点数值转换为整数值
+        # 处理CRS grade、ICANS grade、Early ICAHT grade、Late ICAHT grade、Infection grade
+        grade_columns = ['CRS grade', 'ICANS grade', 'Early ICAHT grade', 'Late ICAHT grade', 'Infection grade']
+        for col in grade_columns:
+            if col in df_converted.columns:
+                df_converted[col] = df_converted[col].apply(convert_grade_to_integer)
         
         # 第四步：保存转换结果并返回
         # 确保输出目录存在

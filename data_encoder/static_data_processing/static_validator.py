@@ -160,34 +160,34 @@ class StaticDataValidator:
             17: {  # CAR-T回输日期
                 'name': 'CAR-T cell infusion date',
                 'type': 'date',
-                'format': ['YYYY/MM/DD', 'YYYY-MM-DD'],
+                'format': ['YYYY/MM/DD 0:00:00'],
                 'note': '将标准化为YYYY-MM-DD'
             },
             18: {  # CRS等级
                 'name': 'CRS grade',
                 'type': 'categorical',
-                'categories': ['NA', '0', '1', '2', '3', '4', '5'],
+                'categories': ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },
             19: {  # ICANS等级
                 'name': 'ICANS grade',
                 'type': 'categorical',
-                'categories': ['NA', '0', '1', '2', '3', '4', '5'],
+                'categories': ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },
             20: {  # 早期ICAHT等级
                 'name': 'Early ICAHT grade',
                 'type': 'categorical',
-                'categories': ['NA', '0', '1', '2', '3', '4', '5'],
+                'categories': ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },
             21: {  # 晚期ICAHT等级
                 'name': 'Late ICAHT grade',
                 'type': 'categorical',
-                'categories': ['NA', '0', '1', '2', '3', '4', '5'],
+                'categories': ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'],
                 'ordered': True,
                 'note': '将编码为NA/0/1'
             },

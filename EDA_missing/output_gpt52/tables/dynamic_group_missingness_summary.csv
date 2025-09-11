@@ -1,9 +1,0 @@
-group_code,group_label,missing_cells,total_cells,missing_pct,variables_with_any_missing,variables_total,var_missing_ratio
-Inf,Inflammatory Biomarkers,828,828,100.0,9,9,9/9
-VCN,VCN,92,92,100.0,1,1,1/1
-Lym,Lymphocyte Subsets,1012,1012,100.0,11,11,11/11
-Bio,Biochemistry,2540,2576,98.6024844720497,28,28,28/28
-Ele,Electrolytes,544,552,98.55072463768117,6,6,6/6
-Vit,Vital Signs,542,552,98.18840579710145,6,6,6/6
-Coa,Coagulation,722,736,98.09782608695652,8,8,8/8
-CBC,CBC,2159,2208,97.78079710144928,24,24,24/24
