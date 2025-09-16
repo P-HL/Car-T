@@ -1,0 +1,224 @@
+# Configuration for static data processing and visualization
+# 静态数据处理和可视化配置文件
+
+# =============================================================================
+# DATA PROCESSING CONFIGURATION 数据处理配置
+# =============================================================================
+
+# Input/Output paths 输入输出路径
+paths:
+  input_file: "/home/phl/PHL/Car-T/data_encoder/output/dataset/encoded_standardized.csv"
+  output_dir: "/home/phl/PHL/Car-T/dataset_clip/output"
+
+# Analysis parameters 分析参数
+analysis:
+  age_threshold: 65  # 年龄分界线，用于分组分析
+
+# Output settings 输出设置  
+output:
+  report_filename: "comprehensive_analysis_report.txt"
+  visualization_filename: "categorical_variables_visualization.png"
+  data_filename: "categorical_variables_data.csv"
+  encoding: "utf-8"
+
+# =============================================================================
+# VISUALIZATION CONFIGURATION 可视化配置
+# =============================================================================
+
+# Visualization settings 可视化设置
+visualization:
+  # Variables to visualize 要可视化的变量
+  variables:
+    - "Age"
+    - "Sex"  
+    - "Disease"
+    - "Bone marrow cellularity"
+    - "extramedullary mass"
+    - "extranodal involvement"
+    - "B symptoms"
+    - "Ann Arbor stage"
+    - "Number of prior therapy lines"
+    - "Prior hematopoietic stem cell"
+    - "Prior CAR-T therapy"
+    - "Bridging therapy"
+    - "Costimulatory molecule"
+    - "Type of construct(tandem/single target)"
+    - "CAR-T therapy following auto-HSCT"
+    - "CRS grade"
+    - "ICANS grade"
+    - "Early ICAHT grade"
+    - "Late ICAHT grade"
+    - "Infection grade"
+  
+  # Figure layout settings 图形布局设置
+  figure_width: 25
+  figure_height: 10  # 增加高度以改善视觉比例
+  spacing: 4.0      # 增加间距以改善可读性
+  max_categories: 10
+  
+  # Layout margins and spacing 布局边距和间距
+  top_margin: 0.92     # 为标题预留更多空间
+  bottom_margin: 0.08  # 为底部标签预留更多空间
+  left_margin: 0.08    # 左侧边距
+  right_margin: 0.95   # 右侧边距
+  wspace: 0.3          # 子图间水平间距
+  hspace: 0.4          # 子图间垂直间距
+  
+  # Color scheme 颜色方案
+  colors:
+    - "#2E86AB"
+    - "#A23B72" 
+    - "#F18F01"
+    - "#C73E1D"
+    - "#6A994E"
+    - "#577590"
+    - "#F8961E"
+    - "#F9844A"
+    - "#90A959"
+    - "#6494AA"
+  
+  # Output settings 输出设置
+  dpi: 300
+  output_formats:
+    - "png"
+    - "pdf"
+  
+  # Visual styling parameters 视觉样式参数
+  alpha: 0.8
+  grid_alpha: 0.3
+  bar_width: 0.7
+  category_spacing: 0.8
+  variable_spacing: 1.5
+
+  # =============================================================================
+  # SUBPLOT RENDERING CONFIGURATION 子图渲染配置
+  # =============================================================================
+  
+  # Subplot parameters 子图参数
+  subplot_params:
+    # Figure size and dimensions 图形大小和尺寸
+    individual_width: 3.0      # 单个子图宽度
+    aspect_ratio: 0.5          # 宽高比 (height/width) - Y轴总高度是X轴宽度的2倍
+    
+    # Title layout and spacing control 标题布局和间距控制
+    main_title_fontsize: 16    # 主标题字体大小
+    main_title_y_position: 0.98  # 主标题Y位置 (0-1, 1为顶部)
+    title_to_subplot_spacing: 0.08  # 主标题到子图的间距
+    subplot_area_top: 0.90     # 子图区域顶部位置 (为标题预留空间)
+    
+    # Subplot titles (enabled) 子图标题（启用）
+    show_subplot_titles: true    # 是否显示子图标题
+    
+    # Color scheme and styling 配色方案和样式
+    primary_color: "#2E86AB"   # 主色调
+    secondary_color: "#A23B72" # 次色调
+    background_color: "white"  # 背景色
+    edge_color: "black"        # 边框颜色
+    edge_width: 0.5           # 边框宽度
+    
+    # Grid settings and layout 网格设置和布局
+    grid_enabled: true        # 是否显示网格
+    grid_alpha: 0.3          # 网格透明度
+    grid_axis: "y"           # 网格轴向 ("x", "y", "both")
+    grid_linestyle: "-"      # 网格线样式
+    grid_linewidth: 0.5      # 网格线宽度
+    
+    # Font and text properties 字体和文本属性
+    font_family: ["DejaVu Sans", "Liberation Sans", "sans-serif"]  # 字体族
+    text_color: "black"      # 文本颜色
+    ylabel_fontsize: 12       # Y轴标签字体大小
+    ylabel_fontweight: "bold" # Y轴标签字体粗细
+    tick_labelsize: 10        # 刻度标签字体大小
+    
+    # Spacing and margin adjustments 间距和边距调整
+    subplot_margins:
+      x_margin: 0.05         # X轴边距
+      y_margin: 0.1          # Y轴边距
+    
+    # Bar chart and legend settings 条形图和图例设置
+    bar_chart:
+      alpha: 0.8             # 条形透明度
+      show_values: true      # 是否显示数值
+      value_fontsize: 8      # 数值字体大小
+      value_fontweight: "bold"  # 数值字体粗细
+      height_compression_factor: 1.2  # 条形图高度压缩因子 (y轴上限 = 最大值 × 此因子)
+      
+      # Variable legend configuration (右上角变量图例)
+      variable_legend:
+        enabled: true        # 默认启用变量图例 (替代X轴标签)
+        location: "upper right"  # 图例位置
+        width_ratio: 0.33    # 图例宽度占子图宽度的比例 (1/3)
+        fontsize: 8          # 图例字体大小
+        max_label_length: 12 # 变量名最大长度 (简化)
+        framealpha: 0.9      # 图例背景透明度
+        
+      # Statistics legend configuration (左上角统计信息图例)  
+      stats_legend:
+        enabled: true        # 是否显示统计信息图例
+        location: "upper left"  # 统计信息位置
+        width_ratio: 0.33    # 统计信息宽度占子图宽度的比例 (1/3)
+        fontsize: 8          # 统计信息字体大小
+        show_count: true     # 显示患者计数
+        show_mean: true      # 显示平均值 (适用时)
+        framealpha: 0.9      # 背景透明度
+      
+    # Histogram specific settings 直方图特定设置
+    histogram:
+      bins_method: "sqrt"    # 分箱方法 ("auto", "sqrt", "sturges", "fd")
+      min_bins: 5           # 最小分箱数
+      max_bins: 20          # 最大分箱数
+      show_stats: true      # 是否显示统计信息
+      stats_fontsize: 8     # 统计信息字体大小
+
+# =============================================================================
+# DISPLAY CONFIGURATION 显示配置
+# =============================================================================
+
+# Display settings 显示设置
+display:
+  # Font preferences 字体设置
+  fonts:
+    - "SimHei"
+    - "DejaVu Sans"
+    - "Arial Unicode MS"
+  
+  # Font sizes 字体大小
+  font_sizes:
+    small: 9
+    normal: 10
+    medium: 12
+    large: 16
+    title: 18
+  
+  # Chinese-English mapping 中英文对照
+  chinese_english_mapping:
+    # Basic demographics 基本人口统计学
+    "Age": "年龄"
+    "Sex": "性别"
+    "Disease": "疾病"
+    
+    # Disease characteristics 疾病特征
+    "BM disease burden": "骨髓疾病负荷"
+    "Bone marrow cellularity": "骨髓细胞活性"
+    "extramedullary mass": "髓外肿块"
+    "extranodal involvement": "结外累及"
+    "B symptoms": "B症状"
+    "Ann Arbor stage": "Ann Arbor分期"
+    
+    # Treatment history 治疗历史
+    "Number of prior therapy lines": "既往治疗线数"
+    "Prior hematopoietic stem cell": "既往造血干细胞移植"
+    "Prior CAR-T therapy": "既往CAR-T治疗"
+    "Bridging therapy": "桥接治疗"
+    
+    # CAR-T characteristics CAR-T特征
+    "Costimulatory molecule": "共刺激分子"
+    "Type of construct(tandem/single target)": "构建体类型"
+    "CAR-T therapy following auto-HSCT": "自体移植后CAR-T治疗"
+    
+    # Adverse events 不良事件
+    "CRS grade": "CRS等级"
+    "ICANS grade": "ICANS等级"
+    "Early ICAHT grade": "早期ICAHT等级"
+    "Late ICAHT grade": "晚期ICAHT等级"
+    "Infection grade": "感染等级"
