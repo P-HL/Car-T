@@ -1,0 +1,110 @@
+
+
+# CAR-T 数据处理系统配置文件
+
+# =============================================================
+
+# 静态数据配置部分
+# =============================================================
+
+# 静态数据路径配置
+# ----------------------
+static_input_file: /home/phl/PHL/Car-T/datasetcart/encoded.csv
+static_output_file: /home/phl/PHL/Car-T/data_preprocessing/output/dataset/encoded_standardized.csv
+
+# 静态数据验证配置
+# ----------------------
+static_expected_column_count: 23
+static_expected_patient_count: 500
+static_validation_report_path: /home/phl/PHL/Car-T/data_preprocessing/output/static_data_validation_report.txt
+
+# 静态数据步骤控制配置
+# ----------------------
+static_validation_only: true   # 静态数据默认仅进行验证
+static_processing_only: false
+
+
+
+
+# =============================================================
+# 动态数据配置部分
+# =============================================================
+
+# 动态数据路径配置
+# ----------------------
+input_dir: /home/phl/PHL/Car-T/datasetcart/processed
+output_dir: /home/phl/PHL/Car-T/data_processing/output/dataset/processed_standardized
+
+# 动态数据验证配置
+# ----------------------
+dynamic_expected_file_count: 500
+dynamic_expected_row_count: 47
+dynamic_expected_time_range_start: -15
+dynamic_expected_time_range_end: 30
+
+# 动态数据处理配置
+# ----------------------
+# 列删除配置（统一配置结构）
+enable_column_deletion: true
+columns_to_delete:
+  cbc: []
+    # - 2
+    # - 4
+    # - 6
+    # - 8
+    # - 10
+    # - 15
+    # - 16
+    # - 17
+    # - 18
+    # - 19
+    # - 21
+    # - 22
+    # - 23
+    # - 24
+  biochemistry: []
+    # - 3
+    # - 7
+  coagulation: []
+    # - 8
+  inflammatory_biomarker: []  # 炎症标志物列，例如: [1, 2]
+  vcn: [1]                     # 病毒拷贝数列，例如: [1]
+  lymphocyte_subsets: [1,2,3,4,5,6,7,8,9,10,11]      # 淋巴细胞亚群列，例如: [1, 2, 3]
+  electrolytes: []            # 电解质列，例如: [1, 2]
+  vital_signs: []             # 生命体征列，例如: [1, 2, 3]
+  optional: []                # 可选列（完整列名），例如: ['VCN001', 'Lymphocyte Subsets001']
+
+# 列重新排序配置
+# ----------------------
+# 控制删除列后是否对剩余列重新编号以保持连续性
+enable_column_reordering: false
+
+# 指定哪些列前缀需要重新排序
+# 如果为空列表，则不进行任何重新排序
+# 如果 enable_column_reordering 为 false，此配置将被忽略
+column_prefixes_to_reorder:
+  - CBC
+  - Biochemistry
+  - Coagulation
+  - Inflammatory Biomarker
+  - Lymphocyte Subsets
+  - Electrolytes
+  - Vital Signs
+  # 注意：VCN 通常不需要重新排序，因为只有一列
+
+# 动态数据处理控制配置
+# ----------------------
+remove_optional_columns: false
+verbose: true
+progress_interval: 50
+
+# 动态数据步骤控制配置
+# ----------------------
+dynamic_validation_only: true
+dynamic_processing_only: false
+skip_interactive: false
+
+# 动态数据报告输出配置
+# ----------------------
+dynamic_validation_report_path: /home/phl/PHL/Car-T/data_processing/output/dynamic_data_validation_report.txt
+dynamic_processing_report_path: /home/phl/PHL/Car-T/data_processing/output/dynamic_data_processing_report.txt

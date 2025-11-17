@@ -1,0 +1,20 @@
+动态患者数据处理报告
+======================================================================
+
+处理时间: 2025-11-17 11:42:59.814117
+输入目录: /home/phl/PHL/Car-T/datasetcart/processed
+输出目录: /home/phl/PHL/Car-T/data_processing/output/dataset/processed_standardized
+列删除功能: 启用
+列重新排序: 禁用
+
+删除的列配置:
+- 病毒拷贝数列: ['VCN001']
+- 淋巴细胞亚群列: ['Lymphocyte Subsets001', 'Lymphocyte Subsets002', 'Lymphocyte Subsets003', 'Lymphocyte Subsets004', 'Lymphocyte Subsets005', 'Lymphocyte Subsets006', 'Lymphocyte Subsets007', 'Lymphocyte Subsets008', 'Lymphocyte Subsets009', 'Lymphocyte Subsets010', 'Lymphocyte Subsets011']
+
+处理结果总结:
+- 处理文件数: 2
+- 成功文件数: 2
+- 失败文件数: 0
+- 错误总数: 0
+- 警告总数: 0
+

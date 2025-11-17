@@ -1,0 +1,253 @@
+================================================================================
+血液疾病临床预测项目 - 全面分类变量统计分析报告
+Blood Disease Clinical Prediction Project - Comprehensive Categorical Variables Analysis
+================================================================================
+生成时间 Generation Time: 2025-11-17 17:11:40
+数据源文件 Data Source: encoded.csv
+数据集总样本量 Total Sample Size: 5 名患者
+================================================================================
+
+第一部分：基本人口统计学分析 PART I: BASIC DEMOGRAPHICS
+============================================================
+
+1.1 性别分布 (Sex Distribution)
+----------------------------------------
+Male: 4 名患者 (80.0%)
+Female: 1 名患者 (20.0%)
+
+1.2 年龄分布 (Age Distribution) - 以65岁为分界
+----------------------------------------
+年龄统计摘要 Age Statistics:
+  平均年龄 Mean: 47.4 岁
+  中位数 Median: 46.0 岁
+  标准差 Std Dev: 10.0
+  最小年龄 Min: 35 岁
+  最大年龄 Max: 58 岁
+
+年龄分组分布 Age Group Distribution:
+  < 65岁: 5 名患者 (100.0%)
+
+
+第二部分：疾病特征分析 PART II: DISEASE CHARACTERISTICS
+============================================================
+
+2.1 疾病类型分布 (Disease Distribution)
+----------------------------------------
+疾病类型数量 Number of Disease Types: 2
+  B-NHL: 4 名患者 (80.0%)
+  ALL: 1 名患者 (20.0%)
+
+2.2 骨髓疾病负荷 (BM Disease Burden)
+----------------------------------------
+骨髓疾病负荷统计 BM Disease Burden Statistics:
+  平均值 Mean: 25.99%
+  中位数 Median: 0.11%
+  标准差 Std Dev: 35.97
+  最小值 Min: 0.00%
+  最大值 Max: 72.82%
+
+骨髓疾病负荷分组 BM Disease Burden Categories:
+  高负荷 (51-75%): 2 名患者 (40.0%)
+  无负荷 (0%): 2 名患者 (40.0%)
+  低负荷 (1-25%): 1 名患者 (20.0%)
+
+2.3 骨髓细胞活性 (Bone Marrow Cellularity)
+----------------------------------------
+  Significantly_active: 1 名患者 (20.0%)
+  Significantly_reduced: 1 名患者 (20.0%)
+  Extremely_active: 1 名患者 (20.0%)
+  Normal_active: 1 名患者 (20.0%)
+  Extremely_reduced: 1 名患者 (20.0%)
+
+2.4 髓外病变特征 (Extramedullary Disease Features)
+----------------------------------------
+
+extramedullary mass:
+  No: 3 名患者 (60.0%)
+  Yes: 2 名患者 (40.0%)
+
+extranodal involvement:
+  2: 3 名患者 (60.0%)
+  1: 1 名患者 (20.0%)
+  0: 1 名患者 (20.0%)
+
+B symptoms:
+  No: 3 名患者 (60.0%)
+  Yes: 2 名患者 (40.0%)
+
+2.5 Ann Arbor分期 (Ann Arbor Staging)
+----------------------------------------
+  Stage Stage4: 1 名患者 (20.0%)
+  Stage Stage1: 1 名患者 (20.0%)
+  Stage Stage2: 1 名患者 (20.0%)
+  Stage Stage3: 1 名患者 (20.0%)
+
+
+第三部分：治疗历史分析 PART III: TREATMENT HISTORY
+============================================================
+
+3.1 既往治疗线数 (Number of Prior Therapy Lines)
+----------------------------------------
+既往治疗线数统计 Prior Therapy Lines Statistics:
+  平均线数 Mean: 2.8
+  中位数 Median: 3.0
+  标准差 Std Dev: 1.3
+  最少线数 Min: 1
+  最多线数 Max: 4
+
+治疗线数分布 Distribution by Number of Lines:
+  1 线: 1 名患者 (20.0%)
+  2 线: 1 名患者 (20.0%)
+  3 线: 1 名患者 (20.0%)
+  4 线: 2 名患者 (40.0%)
+
+3.2 既往造血干细胞移植史 (Prior Hematopoietic Stem Cell Transplant)
+----------------------------------------
+  Autologous: 2 名患者 (40.0%)
+  Allogeneic: 2 名患者 (40.0%)
+
+3.3 既往CAR-T治疗史 (Prior CAR-T Therapy)
+----------------------------------------
+  Yes: 5 名患者 (100.0%)
+
+3.4 桥接治疗 (Bridging Therapy)
+----------------------------------------
+  Yes: 3 名患者 (60.0%)
+  No: 2 名患者 (40.0%)
+
+
+第四部分：CAR-T治疗特征分析 PART IV: CAR-T TREATMENT CHARACTERISTICS
+============================================================
+
+4.1 共刺激分子 (Costimulatory Molecule)
+----------------------------------------
+  41BB+CD28: 4 名患者 (80.0%)
+  41BB: 1 名患者 (20.0%)
+
+4.2 构建体类型 (Type of Construct)
+----------------------------------------
+  Tandem: 3 名患者 (60.0%)
+  Single: 1 名患者 (20.0%)
+  Cocktail: 1 名患者 (20.0%)
+
+4.3 自体移植后CAR-T治疗 (CAR-T Therapy Following Auto-HSCT)
+----------------------------------------
+  No: 3 名患者 (60.0%)
+  Yes: 2 名患者 (40.0%)
+
+
+第五部分：不良事件分析 PART V: ADVERSE EVENTS ANALYSIS
+============================================================
+
+5.1 CRS grade
+----------------------------------------
+有效数据 Valid Data: 5 名患者
+缺失数据 Missing Data: 0 名患者
+
+等级分布 Grade Distribution:
+  等级 0: 3 名患者 (60.0%)
+  等级 1: 1 名患者 (20.0%)
+  等级 2: 1 名患者 (20.0%)
+
+任何等级事件发生率 Any Grade Event Rate: 2/5 (40.0%)
+高等级事件发生率 (≥3级) High Grade Event Rate: 0/5 (0.0%)
+
+5.2 ICANS grade
+----------------------------------------
+有效数据 Valid Data: 5 名患者
+缺失数据 Missing Data: 0 名患者
+
+等级分布 Grade Distribution:
+  等级 0: 5 名患者 (100.0%)
+
+任何等级事件发生率 Any Grade Event Rate: 0/5 (0.0%)
+高等级事件发生率 (≥3级) High Grade Event Rate: 0/5 (0.0%)
+
+5.3 Early ICAHT grade
+----------------------------------------
+有效数据 Valid Data: 5 名患者
+缺失数据 Missing Data: 0 名患者
+
+等级分布 Grade Distribution:
+  等级 1: 2 名患者 (40.0%)
+  等级 2: 2 名患者 (40.0%)
+  等级 3: 1 名患者 (20.0%)
+
+任何等级事件发生率 Any Grade Event Rate: 5/5 (100.0%)
+高等级事件发生率 (≥3级) High Grade Event Rate: 1/5 (20.0%)
+
+5.4 Late ICAHT grade
+----------------------------------------
+有效数据 Valid Data: 4 名患者
+缺失数据 Missing Data: 1 名患者
+
+等级分布 Grade Distribution:
+  等级 0.0: 1 名患者 (25.0%)
+  等级 2.0: 2 名患者 (50.0%)
+  等级 3.0: 1 名患者 (25.0%)
+
+任何等级事件发生率 Any Grade Event Rate: 3/4 (75.0%)
+高等级事件发生率 (≥3级) High Grade Event Rate: 1/4 (25.0%)
+
+5.5 Infection grade
+----------------------------------------
+有效数据 Valid Data: 5 名患者
+缺失数据 Missing Data: 0 名患者
+
+等级分布 Grade Distribution:
+  等级 0: 2 名患者 (40.0%)
+  等级 3: 3 名患者 (60.0%)
+
+任何等级事件发生率 Any Grade Event Rate: 3/5 (60.0%)
+高等级事件发生率 (≥3级) High Grade Event Rate: 3/5 (60.0%)
+
+
+第六部分：数据质量分析 PART VI: DATA QUALITY ANALYSIS
+============================================================
+
+6.1 数据完整性 (Data Completeness)
+----------------------------------------
+数据集维度 Dataset Dimensions: 5 行 × 25 列
+总单元格数 Total Cells: 125
+缺失值总数 Total Missing Values: 3
+数据完整率 Data Completeness: 97.6%
+
+各变量缺失情况 Missing Values by Variable:
+  Ann Arbor stage: 1 (20.0%)
+  Prior hematopoietic stem cell: 1 (20.0%)
+  Late ICAHT grade: 1 (20.0%)
+
+6.2 数据类型分析 (Data Types Analysis)
+----------------------------------------
+数据类型分布 Data Type Distribution:
+  object: 15 个变量
+  int64: 8 个变量
+  float64: 2 个变量
+
+6.3 变量唯一值分析 (Unique Values Analysis)
+----------------------------------------
+  ID: 5 个唯一值 (100.0%)
+  Age: 5 个唯一值 (100.0%)
+  Sex: 2 个唯一值 (40.0%)
+  Disease: 2 个唯一值 (40.0%)
+  BM disease burden: 4 个唯一值 (80.0%)
+  Bone marrow cellularity: 5 个唯一值 (100.0%)
+  extramedullary mass: 2 个唯一值 (40.0%)
+  extranodal involvement: 3 个唯一值 (60.0%)
+  B symptoms: 2 个唯一值 (40.0%)
+  Ann Arbor stage: 4 个唯一值 (80.0%)
+  Number of prior therapy lines: 4 个唯一值 (80.0%)
+  Prior hematopoietic stem cell: 2 个唯一值 (40.0%)
+  Prior CAR-T therapy: 1 个唯一值 (20.0%)
+  Bridging therapy: 2 个唯一值 (40.0%)
+  CAR-T therapy following auto-HSCT: 2 个唯一值 (40.0%)
+  Costimulatory molecule: 2 个唯一值 (40.0%)
+  Type of construct(tandem/single target): 3 个唯一值 (60.0%)
+  CAR-T cell infusion date: 4 个唯一值 (80.0%)
+  CRS grade: 3 个唯一值 (60.0%)
+  ICANS grade: 1 个唯一值 (20.0%)
+  Early ICAHT grade: 3 个唯一值 (60.0%)
+  Late ICAHT grade: 3 个唯一值 (60.0%)
+  Infection grade: 2 个唯一值 (40.0%)
+  Age_Group: 1 个唯一值 (20.0%)
+  BM_Burden_Category: 3 个唯一值 (60.0%)

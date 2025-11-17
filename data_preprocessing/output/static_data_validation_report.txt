@@ -1,0 +1,39 @@
+静态患者数据验证报告
+======================================================================
+
+验证时间: 2025-11-17 11:43:41.757274
+数据文件: /home/phl/PHL/Car-T/datasetcart/encoded.csv
+预期列数: 23
+预期最大患者数: 500
+
+验证结果汇总:
+  实际患者数: 5
+  实际列数: 23
+  错误数量: 0
+  警告数量: 0
+  数据问题数量: 0
+
+列规范说明:
+  列1 (患者ID): integer, 范围: (1, 700)
+  列2 (Age): integer, 范围: (0, 80)
+  列3 (Sex): categorical, 类别: ['male', 'female']
+  列4 (Disease): categorical [跳过验证] - 将编码为ALL/B-NHL
+  列5 (BM disease burden): float, 范围: (0, 100)
+  列6 (Bone marrow cellularity): categorical, 类别: ['NA', '极度减低', '减低', '活跃', '明显活跃', '极度活跃']
+  列7 (extramedullary mass): categorical, 类别: ['有', '无']
+  列8 (extranodal involvement): categorical, 类别: ['0', '1', '2', '3', '4', '5', '6', '7'] - 将编码为3类：0/1/2
+  列9 (B symptoms): categorical, 类别: ['有', '无']
+  列10 (Ann Arbor stage): categorical, 类别: ['NA', 'I', 'II', 'III', 'IV']
+  列11 (Number of prior therapy lines): categorical, 类别: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'] - 将编码为4类：1/2/3/4
+  列12 (Prior hematopoietic stem cell): categorical, 类别: ['无', '自体', '异体']
+  列13 (Prior CAR-T therapy): categorical, 类别: ['有', '无'] - 既往有无CAR-T治疗史，将编码为Yes/No
+  列14 (Bridging therapy): categorical, 类别: ['有', '无']
+  列15 (CAR-T therapy following auto-HSCT): categorical, 类别: ['是', '否']
+  列16 (Costimulatory molecule): categorical, 类别: ['41BB', 'CD28', '41BB+CD28']
+  列17 (Type of construct(tandem/single target)): categorical [跳过验证] - 将编码为3类：Cocktail/Tandem/Single
+  列18 (CAR-T cell infusion date): date - 将标准化为YYYY-MM-DD
+  列19 (CRS grade): categorical, 类别: ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'] - 后续编码为NA/0/1, 这里不变
+  列20 (ICANS grade): categorical, 类别: ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'] - 后续编码为NA/0/1, 这里不变
+  列21 (Early ICAHT grade): categorical, 类别: ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'] - 后续编码为NA/0/1, 这里不变
+  列22 (Late ICAHT grade): categorical, 类别: ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'] - 后续编码为NA/0/1, 这里不变
+  列23 (Infection grade): categorical, 类别: ['NA', '0.0', '1.0', '2.0', '3.0', '4.0', '5.0'] - 后续编码为NA/0/1, 这里不变
