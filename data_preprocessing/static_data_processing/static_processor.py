@@ -30,46 +30,62 @@ class StaticDataProcessor:
         
         # 性别编码映射 - 标准化性别表示
         self.sex_mapping = {
-            'male': 'Male',
-            'female': 'Female'
+            # 'male': 'Male',
+            # 'female': 'Female'
+            'male': '0',
+            'female': '1'
         }
         
         # 骨髓增生程度映射 - 将中文描述转换为英文标准术语
         self.cellularity_mapping = {
             'NA': 'NA',
-            '极度减低': 'Extremely_reduced',
-            '减低': 'Significantly_reduced',
-            '活跃': 'Normal_active',
-            '明显活跃': 'Significantly_active',
-            '极度活跃': 'Extremely_active'
+            # '极度减低': 'Extremely_reduced',
+            # '减低': 'Significantly_reduced',
+            # '活跃': 'Normal_active',
+            # '明显活跃': 'Significantly_active',
+            # '极度活跃': 'Extremely_active'
+            '极度减低': '0',
+            '减低': '1',
+            '活跃': '2',
+            '明显活跃': '3',
+            '极度活跃': '4'
         }
         
         # 二元分类变量映射 - 统一"有/无"类型变量的表示
         self.extramedullary_mapping = {
-            '无': 'No',
-            '有': 'Yes'
+            # '无': 'No',
+            # '有': 'Yes'
+            '无': '0',
+            '有': '1'
         }
         
         # Ann Arbor分期映射 - 淋巴瘤分期标准化
         self.ann_mapping = {
-            'IV': 'Stage4',
-            'III': 'Stage3',
-            'II': 'Stage2',
-            'I': 'Stage1',
+            # 'IV': 'Stage4',
+            # 'III': 'Stage3',
+            # 'II': 'Stage2',
+            # 'I': 'Stage1',
+            # 'NA': 'NA',
+            'IV': '4',
+            'III': '3',
+            'II': '2',
+            'I': '1',
             'NA': 'NA',
         }
         
         # 既往造血干细胞移植类型映射
         self.prior_mapping = {
-            '无': 'None',
-            '自体': 'Autologous',
-            '异体': 'Allogeneic'
+            '无': 'HSCT_No_Prior',
+            '自体': 'HSCT_Autologous',
+            '异体': 'HSCT_Allogeneic'
         }
         
         # 是否类型变量映射 - 标准化布尔值表示
         self.boolean_mapping = {
-            '否': 'No',
-            '是': 'Yes'
+            # '否': 'No',
+            # '是': 'Yes'
+            '否': '0',
+            '是': '1'
         }
         
         # CAR-T细胞共刺激分子类型映射 - 标准化CAR-T构建信息

@@ -33,7 +33,7 @@ static_processing_only: false
 # 动态数据路径配置
 # ----------------------
 input_dir: /home/phl/PHL/Car-T/datasetcart/processed
-output_dir: /home/phl/PHL/Car-T/data_processing/output/dataset/processed_standardized
+output_dir: /home/phl/PHL/Car-T/data_preprocessing/output/dataset/processed_standardized
 
 # 动态数据验证配置
 # ----------------------
@@ -106,5 +106,5 @@ skip_interactive: false
 
 # 动态数据报告输出配置
 # ----------------------
-dynamic_validation_report_path: /home/phl/PHL/Car-T/data_processing/output/dynamic_data_validation_report.txt
-dynamic_processing_report_path: /home/phl/PHL/Car-T/data_processing/output/dynamic_data_processing_report.txt
+dynamic_validation_report_path: /home/phl/PHL/Car-T/data_preprocessing/output/dynamic_data_validation_report.txt
+dynamic_processing_report_path: /home/phl/PHL/Car-T/data_preprocessing/output/dynamic_data_processing_report.txt

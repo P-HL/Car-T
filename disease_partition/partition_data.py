@@ -36,7 +36,7 @@ class DiseaseDataPartitioner:
         self.output_base_path = Path(output_base_path)
         
         # 定义路径
-        self.static_data_path = self.input_base_path / "encoded_standardized.csv"
+        self.static_data_path = self.input_base_path / "encoded_standardized_v2.csv"
         self.dynamic_data_dir = self.input_base_path / "processed_standardized"
         
         # 疾病类型
@@ -68,6 +68,23 @@ class DiseaseDataPartitioner:
         logger.info("疾病类型分布:")
         for disease, count in disease_counts.items():
             logger.info(f"  - {disease}: {count} 例")
+        
+        # 确保某些列为整数类型
+        df['Sex'] = df['Sex'].astype('Int64')
+        df['BMC'] = df['BMC'].astype('Int64')
+        df['EM'] = df['EM'].astype('Int64')
+        df['EI'] = df['EI'].astype('Int64')
+        df['B_symptoms'] = df['B_symptoms'].astype('Int64')
+        df['AAS'] = df['AAS'].astype('Int64')
+        df['NL'] = df['NL'].astype('Int64')
+        df['PCT'] = df['PCT'].astype('Int64')
+        df['BT'] = df['BT'].astype('Int64')
+        df['CTFA'] = df['CTFA'].astype('Int64')
+        df['CRS'] = df['CRS'].astype('Int64') 
+        df['ICANS'] = df['ICANS'].astype('Int64')
+        df['E_ICAHT'] = df['E_ICAHT'].astype('Int64')
+        df['L_ICAHT'] = df['L_ICAHT'].astype('Int64')
+        df['Infection'] = df['Infection'].astype('Int64')
         
         return df
     
@@ -352,8 +369,8 @@ class DiseaseDataPartitioner:
 def main():
     """主函数"""
     # 定义路径
-    input_base_path = "/home/phl/PHL/Car-T/data_encoder/output/dataset"
-    output_base_path = "/home/phl/PHL/Car-T/disease_partition"
+    input_base_path = "/home/phl/PHL/Car-T/data_preprocessing/output/dataset"
+    output_base_path = "/home/phl/PHL/Car-T/disease_partition/output"
     
     # 创建分区器并执行
     partitioner = DiseaseDataPartitioner(input_base_path, output_base_path)

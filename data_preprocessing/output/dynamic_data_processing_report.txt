@@ -1,9 +1,9 @@
 动态患者数据处理报告
 ======================================================================
 
-处理时间: 2025-11-17 11:42:59.814117
+处理时间: 2025-12-09 17:20:54.603056
 输入目录: /home/phl/PHL/Car-T/datasetcart/processed
-输出目录: /home/phl/PHL/Car-T/data_processing/output/dataset/processed_standardized
+输出目录: /home/phl/PHL/Car-T/data_preprocessing/output/dataset/processed_standardized
 列删除功能: 启用
 列重新排序: 禁用
 

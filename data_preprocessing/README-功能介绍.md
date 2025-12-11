@@ -512,7 +512,8 @@ tests/
 
 #### 4. 治疗历史
 - **Number of prior therapy lines** - 既往治疗线数（分层变量）
-- **Prior hematopoietic stem cell** - 既往造血干细胞移植（None/Autologous/Allogeneic）
+- **Prior hematopoietic stem cell** - 既往造血干细胞移植（HSCT_No_Prior
+/HSCT_Autologous/HSCT_Allogeneic）
 - **Prior CAR-T therapy** - 既往CAR-T治疗史（Yes/No）
 
 #### 5. CAR-T治疗信息
@@ -707,9 +708,9 @@ def _define_column_specifications(self):
 ### 既往造血干细胞移植映射
 ```python
 {
-    '无': 'None',
-    '自体': 'Autologous',
-    '异体': 'Allogeneic'
+    '无': 'HSCT_No_Prior',
+    '自体': 'HSCT_Autologous',
+    '异体': 'HSCT_Allogeneic'
 }
 ```
 

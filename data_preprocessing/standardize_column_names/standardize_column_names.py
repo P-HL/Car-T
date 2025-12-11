@@ -42,11 +42,11 @@ CUSTOM_MAPPINGS = {
     "Costimulatory molecule": "CM",
     "Type of construct(tandem/single target)": "TYPE",
     "CAR-T cell infusion date": "CCID",
-    "CRS grade": "CRS_grade",
-    "ICANS grade": "ICANS_grade",
-    "Early ICAHT grade": "Early_ICAHT_grade",
-    "Late ICAHT grade": "Late_ICAHT_grade",
-    "Infection grade": "Infection_grade",
+    "CRS grade": "CRS",
+    "ICANS grade": "ICANS",
+    "Early ICAHT grade": "E_ICAHT",
+    "Late ICAHT grade": "L_ICAHT",
+    "Infection grade": "Infection",
 }
 
 
@@ -117,7 +117,7 @@ def standardize_column_names(input_file, output_file=None, custom_mappings=None)
 if __name__ == "__main__":
     # 默认处理的文件路径
     default_input = "/home/phl/PHL/Car-T/data_preprocessing/output/dataset/encoded_standardized.csv"
-    default_output = "/home/phl/PHL/Car-T/data_preprocessing/output/dataset/encoded_standardized2.csv"
+    default_output = "/home/phl/PHL/Car-T/data_preprocessing/output/dataset/encoded_standardized_v2.csv"
     
     # 从命令行参数获取文件路径
     input_file = sys.argv[1] if len(sys.argv) > 1 else default_input

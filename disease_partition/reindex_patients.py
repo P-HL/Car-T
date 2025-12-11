@@ -272,8 +272,8 @@ class PatientReindexer:
 def main():
     """主函数"""
     # 定义路径
-    input_folder = "/home/phl/PHL/Car-T/disease_partition/B-NHL"
-    output_folder = "/home/phl/PHL/Car-T/disease_partition/B-NHL_reindexed"
+    input_folder = "/home/phl/PHL/Car-T/disease_partition/output/B-NHL"
+    output_folder = "/home/phl/PHL/Car-T/disease_partition/output/B-NHL_reindexed"
     
     # 创建重排序器并执行
     reindexer = PatientReindexer(input_folder, output_folder)

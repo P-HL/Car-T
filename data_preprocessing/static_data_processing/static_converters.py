@@ -29,22 +29,15 @@ def convert_date_format(date_str):
         return date_str
     
     try:
-        date_str = str(date_str).strip()
+        # 方法改进：使用 pandas 强大的 to_datetime 自动识别格式
+        # 它可以同时处理 "2025/1/15", "2025-1-15", "2025/1/15 00:00:00" 以及 datetime对象
+        dt = pd.to_datetime(date_str)
         
-        # 处理常见的 "年/月/日" 格式
-        if '/' in date_str:
-            # 处理带时间戳的格式 "YYYY/MM/DD 0:00:00"
-            if ' ' in date_str:
-                date_part = date_str.split(' ')[0]  # 提取日期部分
-                date_obj = datetime.strptime(date_part, '%Y/%m/%d')
-            else:
-                # 处理简单的 "YYYY/MM/DD" 格式
-                date_obj = datetime.strptime(date_str, '%Y/%m/%d')
-            return date_obj.strftime('%Y-%m-%d')  # 转换为ISO标准格式
-        else:
-            return date_str  # 如果已经是标准格式或其他格式，保持不变
+        # 转换成功后，统一格式化为 YYYY-MM-DD
+        return dt.strftime('%Y-%m-%d')
     except:
-        return date_str  # 转换失败时返回原值，避免数据丢失
+        # 如果转换失败（例如完全不是日期），返回原值的字符串形式
+        return str(date_str)
 
 
 def convert_disease(disease):

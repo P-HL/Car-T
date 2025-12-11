@@ -1,5 +1,0 @@
-ID,Age,Sex,Disease,BM disease burden,Bone marrow cellularity,extramedullary mass,extranodal involvement,B symptoms,Ann Arbor stage,Number of prior therapy lines,Prior hematopoietic stem cell,Prior CAR-T therapy,Bridging therapy,CAR-T therapy following auto-HSCT,Costimulatory molecule,Type of construct(tandem/single target),CAR-T cell infusion date,CRS grade,ICANS grade,Early ICAHT grade,Late ICAHT grade,Infection grade
-1,58,Male,B-NHL,57.0,Significantly_active,No,1,No,Stage4,1,,Yes,Yes,No,41BB+CD28,Tandem,2024-05-20,0,0,1,0.0,0
-2,57,Male,B-NHL,0.0,Significantly_reduced,No,2,No,Stage1,3,Autologous,Yes,No,No,41BB,Single,2024-05-20,0,0,2,2.0,0
-3,46,Male,B-NHL,72.82,Extremely_active,Yes,2,Yes,Stage2,2,Allogeneic,Yes,Yes,Yes,41BB+CD28,Cocktail,2024-06-02,0,0,2,,3
-4,41,Male,B-NHL,0.11,Extremely_reduced,Yes,2,Yes,,4,Autologous,Yes,No,No,41BB+CD28,Tandem,2024-06-01,2,0,1,2.0,3

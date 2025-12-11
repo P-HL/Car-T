@@ -1,6 +1,6 @@
-ID,Age,Sex,Disease,BMDB,BMC,EM,EI,B_symptoms,AAS,NL,PHSC,PCT,BT,CTFA,CM,TYPE,CCID,CRS_grade,ICANS_grade,Early_ICAHT_grade,Late_ICAHT_grade,Infection_grade
-1,58,Male,B-NHL,57.0,Significantly_active,No,1,No,Stage4,1,None,Yes,Yes,No,41BB+CD28,Tandem,2024-05-20,0,0,1,0,0
-2,57,Male,B-NHL,0.0,Significantly_reduced,No,2,No,Stage1,3,Autologous,Yes,No,No,41BB,Single,2024-05-20,0,0,2,2,0
-3,46,Male,B-NHL,72.82,Extremely_active,Yes,2,Yes,Stage2,2,Allogeneic,Yes,Yes,Yes,41BB+CD28,Cocktail,2024-06-02,0,0,2,,3
-4,35,Female,ALL,0.0,Normal_active,No,0,No,Stage3,4,Allogeneic,Yes,Yes,Yes,41BB+CD28,Tandem,2024-06-24,1,0,3,3,3
-5,41,Male,B-NHL,0.11,Extremely_reduced,Yes,2,Yes,,4,Autologous,Yes,No,No,41BB+CD28,Tandem,2024-06-01,2,0,1,2,3
+ID,Age,Sex,Disease,BMDB,BMC,EM,EI,B_symptoms,AAS,NL,PHSC,PCT,BT,CTFA,CM,TYPE,CCID,CRS,ICANS,E_ICAHT,L_ICAHT,Infection
+1,58,0,B-NHL,57.0,3,0,1,0,4,1,HSCT_No_Prior,1,1,0,41BB+CD28,Tandem,2024-05-20,0,0,1,0,0
+2,57,0,B-NHL,0.0,1,0,2,0,1,3,HSCT_Autologous,1,0,0,41BB,Single,2024-05-20,0,0,2,2,0
+3,46,0,B-NHL,72.82,4,1,2,1,2,2,HSCT_Allogeneic,1,1,1,41BB+CD28,Cocktail,2024-06-02,0,0,2,,3
+4,35,1,ALL,0.0,2,0,0,0,3,4,HSCT_Allogeneic,1,1,1,41BB+CD28,Tandem,2024-06-24,1,0,3,3,3
+5,41,0,B-NHL,0.11,0,1,2,1,,4,HSCT_Autologous,1,0,0,41BB+CD28,Tandem,2024-06-01,2,0,1,2,3
