@@ -97,11 +97,14 @@ class StaticDataProcessor:
 
         # CAR-T细胞构建类型映射 - 区分单靶点、双靶点等不同构建策略
         self.construct_mapping = {
-            'CD19+CD20 tandem': 'Tandem',
-            'CD7 single target': 'Single',
-            'single target cocktail': 'Cocktail',
-            'CD20/22': 'Tandem',
-            'CD19+CD22': 'Tandem'
+            'CD19+CD20 tandem': 'Tandem',   # 37
+            'CD19+CD22 tandem': 'Tandem',   # 66
+            'CD7 single target': 'Single',  # 11
+            'CD19 single target': 'Single',  # 68
+            'single target cocktail': 'Cocktail',   # 369
+            'CD20/22': 'Tandem',            # 1
+            'CD19+CD22': 'Tandem',          # 4
+            'CD19+CD22 tandem CD19+CD20 tandem': 'Tandem',   # 1
         }  
     
     
